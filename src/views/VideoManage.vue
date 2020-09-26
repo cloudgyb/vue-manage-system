@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h3>Home</h3>
+    <h3>视频管理</h3>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home'
+  name: 'VideoManage'
 }
 </script>
 

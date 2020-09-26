@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h3>Home</h3>
+    <h3>Setting设置</h3>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Setting'
 }
 </script>
 
