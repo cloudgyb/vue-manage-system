@@ -51,6 +51,10 @@ header {
   height: 100%;
   align-items: center;
   justify-content: space-between;
+  div {
+    display: flex;
+    align-items: center;
+  }
 }
 .el-breadcrumb {
   display: inline-block;

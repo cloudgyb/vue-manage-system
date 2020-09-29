@@ -28,8 +28,6 @@ http.interceptors.response.use(
     let code = resp.status
     if (code >= 300) {
       msgNotify('error', '请求出错了！')
-    } else if (resp.data.code !== 'A00000') {
-      msgNotify('error', '请求出错了！')
     }
     return resp
   },

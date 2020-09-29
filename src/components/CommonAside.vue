@@ -1,5 +1,13 @@
 <template>
-  <el-menu :router="true" :collapse="iscollapse" class="el-menu-vertical-demo" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+  <el-menu
+    :default-active="currMenuPath"
+    :router="true"
+    :collapse="iscollapse"
+    class="el-menu-vertical-demo"
+    background-color="#545c64"
+    text-color="#fff"
+    active-text-color="#ffd04b"
+  >
     <el-menu-item v-for="item in noSubMenu" :index="item.path" :key="item.path" @click="selectMenu(item)">
       <i :class="item.icon"></i>
       <span slot="title">{{ item.label }}</span>
@@ -74,6 +82,9 @@ export default {
       return this.menuData.filter(item => {
         return item.subMenu === undefined
       })
+    },
+    currMenuPath() {
+      return this.$route.path
     }
   }
 }

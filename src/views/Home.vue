@@ -1,6 +1,17 @@
 <template>
   <div>
-    <h3></h3>
+    <el-row :gutter="10">
+      <el-col :span="6">
+        <el-card class="box-card">
+          <div v-for="o in 4" :key="o" class="text item">
+            {{ '列表内容 ' + o }}
+          </div>
+        </el-card>
+      </el-col>
+      <el-col :span="18">
+        <el-card></el-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 

@@ -25,6 +25,7 @@ export default {
       })
       if (itemIndex !== -1) {
         state.tabList.splice(itemIndex, 1)
+        state.currentMenu = state.tabList[state.tabList.length - 1]
       }
     }
   },

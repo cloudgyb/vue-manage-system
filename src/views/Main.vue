@@ -8,7 +8,7 @@
         <common-header></common-header>
       </el-header>
       <el-main>
-        <common-tab></common-tab>
+        <common-tab class="tab"></common-tab>
         <router-view />
       </el-main>
     </el-container>
@@ -40,5 +40,11 @@ export default {
 <style lang="scss" scoped>
 .el-header {
   background-color: #000;
+}
+.el-main {
+  padding: 10px;
+}
+.tab {
+  margin-bottom: 10px;
 }
 </style>

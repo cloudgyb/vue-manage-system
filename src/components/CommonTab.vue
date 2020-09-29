@@ -1,6 +1,14 @@
 <template>
   <div>
-    <el-tag v-for="tag in tags" size="mini" :key="tag.path" :closable="tag.path !== '/'" @click="handleClick(tag)" @close="handleClose(tag)">
+    <el-tag
+      v-for="tag in tags"
+      :effect="tag.path === currPath ? 'dark' : 'light'"
+      size="mini"
+      :key="tag.path"
+      :closable="tag.path !== '/'"
+      @click="handleClick(tag)"
+      @close="handleClose(tag)"
+    >
       {{ tag.label }}
     </el-tag>
   </div>
@@ -15,12 +23,17 @@ export default {
   },
   computed: {
     ...mapState({
-      tags: state => state.tab.tabList
-    })
+      tags: state => state.tab.tabList,
+      currMenu: state => state.tab.currentMenu
+    }),
+    currPath() {
+      return this.$route.path
+    }
   },
   methods: {
     ...mapMutations({
-      closeTab: 'closeTab'
+      closeTab: 'closeTab',
+      selectMenu: 'selectMenu'
     }),
     handleClose(tag) {
       this.closeTab(tag)
@@ -30,6 +43,7 @@ export default {
       }
     },
     handleClick(tag) {
+      this.selectMenu(tag)
       if (this.$route.path !== tag.path) {
         this.$router.push({ path: tag.path })
       }
